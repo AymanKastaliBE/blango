@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'rest_framework',
     'rest_framework.authtoken',
+    'django_filters',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -87,6 +88,12 @@ REST_FRAMEWORK = {
         "user_sustained": "5000/day",
         "user_burst": "100/minute",
     },
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 1,
+    "DEFAULT_FILTER_BACKENDS": [
+        "django_filters.rest_framework.DjangoFilterBackend",
+        "rest_framework.filters.OrderingFilter"
+    ],
 }
 
 
