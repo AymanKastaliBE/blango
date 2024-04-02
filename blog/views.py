@@ -4,7 +4,10 @@ from blog.models import Post
 from django.shortcuts import redirect
 from blog.forms import CommentForm
 
+def post_table(request):
+    return render(request, "blog/post-table.html")
 
+    
 def index(request):
     posts = Post.objects.filter()
     print('posts: ', posts)
